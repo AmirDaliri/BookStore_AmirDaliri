@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AE4950BCDFC119098F191790 /* Pods_BookStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2883C8523C67943504D8A0D9 /* Pods_BookStore.framework */; };
-		C5A40180256552D800729650 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4017E256552D800729650 /* MainViewController.swift */; };
-		C5A40181256552D800729650 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A4017F256552D800729650 /* MainViewController.xib */; };
+		C5A40180256552D800729650 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4017E256552D800729650 /* BooksViewController.swift */; };
+		C5A40181256552D800729650 /* BooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A4017F256552D800729650 /* BooksViewController.xib */; };
 		C5A40184256552FF00729650 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40183256552FF00729650 /* UIViewController+Extension.swift */; };
 		C5A40194256556D600729650 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40193256556D600729650 /* NetworkLayer.swift */; };
 		C5A40197256556F100729650 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40196256556F100729650 /* AppConstants.swift */; };
 		C5A4019C2565579600729650 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4019B2565579600729650 /* APIRouter.swift */; };
 		C5A401A02565598B00729650 /* MainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4019F2565598B00729650 /* MainRequest.swift */; };
-		C5A401AC2565609900729650 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401AB2565609900729650 /* MainViewModel.swift */; };
+		C5A401AC2565609900729650 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401AB2565609900729650 /* BooksViewModel.swift */; };
 		C5A401B9256566C600729650 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401B8256566C600729650 /* Disposable.swift */; };
 		C5A401BC256566D600729650 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401BB256566D600729650 /* Observable.swift */; };
 		C5A401C32565671900729650 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401C22565671900729650 /* State.swift */; };
@@ -53,14 +53,14 @@
 		17084DF44348C2C043828696 /* Pods-BookStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.debug.xcconfig"; path = "Target Support Files/Pods-BookStore/Pods-BookStore.debug.xcconfig"; sourceTree = "<group>"; };
 		2883C8523C67943504D8A0D9 /* Pods_BookStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EF5CA043CC41BF297F888C /* Pods-BookStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.release.xcconfig"; path = "Target Support Files/Pods-BookStore/Pods-BookStore.release.xcconfig"; sourceTree = "<group>"; };
-		C5A4017E256552D800729650 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		C5A4017F256552D800729650 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		C5A4017E256552D800729650 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		C5A4017F256552D800729650 /* BooksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksViewController.xib; sourceTree = "<group>"; };
 		C5A40183256552FF00729650 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C5A40193256556D600729650 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		C5A40196256556F100729650 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		C5A4019B2565579600729650 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		C5A4019F2565598B00729650 /* MainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRequest.swift; sourceTree = "<group>"; };
-		C5A401AB2565609900729650 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C5A401AB2565609900729650 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		C5A401B8256566C600729650 /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C5A401BB256566D600729650 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C5A401C22565671900729650 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		C5A401A22565602900729650 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C5A4017E256552D800729650 /* MainViewController.swift */,
+				C5A4017E256552D800729650 /* BooksViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 		C5A401A42565602F00729650 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C5A4017F256552D800729650 /* MainViewController.xib */,
+				C5A4017F256552D800729650 /* BooksViewController.xib */,
 				C5A402222565969900729650 /* CollectionViewCell */,
 			);
 			path = View;
@@ -228,7 +228,7 @@
 		C5A401AE256560A000729650 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C5A401AB2565609900729650 /* MainViewModel.swift */,
+				C5A401AB2565609900729650 /* BooksViewModel.swift */,
 				C5A4023225659DCE00729650 /* BookItemViewModel.swift */,
 			);
 			path = ViewModel;
@@ -371,7 +371,7 @@
 			files = (
 				C5BD882C256444030095E984 /* LaunchScreen.storyboard in Resources */,
 				C5A402202565969500729650 /* BookCollectionViewCell.xib in Resources */,
-				C5A40181256552D800729650 /* MainViewController.xib in Resources */,
+				C5A40181256552D800729650 /* BooksViewController.xib in Resources */,
 				C5BD8829256444030095E984 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,10 +456,10 @@
 				C5A401EE25656B7600729650 /* RetailPrice.swift in Sources */,
 				C5A402182565729400729650 /* AlertBuilder.swift in Sources */,
 				C5A40184256552FF00729650 /* UIViewController+Extension.swift in Sources */,
-				C5A40180256552D800729650 /* MainViewController.swift in Sources */,
+				C5A40180256552D800729650 /* BooksViewController.swift in Sources */,
 				C5A401EA25656B7600729650 /* ReadingModes.swift in Sources */,
 				C5A401F425656B7600729650 /* SearchInfo.swift in Sources */,
-				C5A401AC2565609900729650 /* MainViewModel.swift in Sources */,
+				C5A401AC2565609900729650 /* BooksViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

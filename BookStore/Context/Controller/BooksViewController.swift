@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class BooksViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!{
@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Properties
-    private var mainViewModel = MainViewModel()
+    private var booksViewModel = BooksViewModel()
     private var disposal = Disposal()
     
     // MARK: - Lifecycle Methods
@@ -28,12 +28,12 @@ class MainViewController: UIViewController {
         // I'm Here...
         setupNavBar()
         bindUI()
-        mainViewModel.getBooks()
+        booksViewModel.getBooks()
     }
 
     // MARK: - Private Method
     private func bindUI() {
-        mainViewModel.state.observe { [weak self] (state) in
+        booksViewModel.state.observe { [weak self] (state) in
             guard let self = self else { return }
             switch state {
             case .success:
@@ -78,15 +78,15 @@ class MainViewController: UIViewController {
 }
 
 //MARK:- UICollectionView DataSource&Delegate
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension BooksViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mainViewModel.numberOfRows
+        return booksViewModel.numberOfRows
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.reuseIdentifier, for: indexPath as IndexPath) as? BookCollectionViewCell)!
-        if let bookItemViewModel = mainViewModel.bookItemViewModelAtIndex(indexPath.row) {
+        if let bookItemViewModel = booksViewModel.bookItemViewModelAtIndex(indexPath.row) {
             cell.bookItemViewModel = bookItemViewModel
         }
         return cell
@@ -97,8 +97,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == (mainViewModel.numberOfRows - 1) {  //numberofitem count
-            mainViewModel.getBooks()
+        if indexPath.row == (booksViewModel.numberOfRows - 1) {  //numberofitem count
+            booksViewModel.getBooks()
         }
     }
     

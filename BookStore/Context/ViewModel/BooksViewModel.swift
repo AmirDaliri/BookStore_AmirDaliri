@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  BooksViewModel.swift
 //  BookStore
 //
 //  Created by amir on 18.11.2020.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MainViewModel: BaseVM {
+class BooksViewModel: BaseVM {
     
     private var responseModel: Books
     private var index = 0
