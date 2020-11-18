@@ -20,7 +20,7 @@ class Books: Mappable, NSCoding {
     // MARK: Properties
     var totalItems: Int?
     var kind: String?
-    var items: [Items]?
+    var items: [Book]?
     
     // MARK: ObjectMapper Initializers
     /// Map a JSON object to this class using ObjectMapper.
@@ -54,7 +54,7 @@ class Books: Mappable, NSCoding {
     required init(coder aDecoder: NSCoder) {
         self.totalItems = aDecoder.decodeObject(forKey: SerializationKeys.totalItems) as? Int
         self.kind = aDecoder.decodeObject(forKey: SerializationKeys.kind) as? String
-        self.items = aDecoder.decodeObject(forKey: SerializationKeys.items) as? [Items]
+        self.items = aDecoder.decodeObject(forKey: SerializationKeys.items) as? [Book]
     }
     
     func encode(with aCoder: NSCoder) {

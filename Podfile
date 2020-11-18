@@ -4,6 +4,7 @@ use_frameworks!
 def shared_pods
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod 'Kingfisher'
 end
 
 target 'BookStore' do

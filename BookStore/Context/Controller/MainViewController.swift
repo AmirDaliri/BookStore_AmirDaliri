@@ -9,6 +9,12 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet private weak var colllectionView: UICollectionView!{
+        didSet {
+            colllectionView.register(cellClass: BookCollectionViewCell.self)
+        }
+    }
+    
     // MARK: - Properties
     private var mainViewModel = MainViewModel()
     private var disposal = Disposal()
@@ -20,7 +26,9 @@ class MainViewController: UIViewController {
         
         // I'm Here...
         bindUI()
-        mainViewModel.getBooks(index: 0)
+        mainViewModel.getBooks()
+        navigationItem.rightBarButtonItem = addFavotitesBarButtonItem()
+        title = "Books"
     }
 
     // MARK: - Private Method
@@ -39,7 +47,7 @@ class MainViewController: UIViewController {
     }
     
     private func updateUI() {
-        // TODO:  load UI
+        colllectionView.reloadData()
     }
     
     private func handleAlertView(err: BackendError?) {
@@ -49,4 +57,41 @@ class MainViewController: UIViewController {
             .show(in: self)
         }
     }
+    
+    func addFavotitesBarButtonItem() -> UIBarButtonItem? {
+        return UIBarButtonItem(image: #imageLiteral(resourceName: "ic_faved"), style: .plain, target: self, action: #selector(favoritesBarButtonTapped(_:)))
+    }
+    
+    
+    @objc func favoritesBarButtonTapped(_ sender: UIButton) {
+        print(#function)
+    }
+    
+}
+
+//MARK:- UICollectionView DataSource&Delegate
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return mainViewModel.numberOfRows
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.reuseIdentifier, for: indexPath as IndexPath) as? BookCollectionViewCell)!
+        if let bookItemViewModel = mainViewModel.bookAtIndex(indexPath.row) {
+            cell.bookItemViewModel = bookItemViewModel
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(#function)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == (mainViewModel.numberOfRows - 1) {  //numberofitem count
+            mainViewModel.getBooks()
+        }
+    }
+    
 }
