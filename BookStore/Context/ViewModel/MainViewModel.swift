@@ -20,7 +20,9 @@ class MainViewModel: BaseVM {
     
     func getBooks() {
         setState(.loading)
-        MainRequest.shared.getBooks(index: index) { (err, response) in            
+        Spinner.start()
+        MainRequest.shared.getBooks(index: index) { (err, response) in
+            Spinner.stop()
             guard let model = response, let books = model.items else {
                 self.handlePopup(error: err)
                 self.setState(.error(err))
@@ -28,7 +30,7 @@ class MainViewModel: BaseVM {
             }
             self.responseModel = model
             self.bookList.append(contentsOf: books)
-            self.index += 1
+            self.index += 20
             self.setState(.success)
         }
     }
@@ -37,8 +39,12 @@ class MainViewModel: BaseVM {
         return bookList.count
     }
     
-    func bookAtIndex(_ index: Int) -> BookItemViewModel? {
+    func bookItemViewModelAtIndex(_ index: Int) -> BookItemViewModel? {
         return BookItemViewModel(book: bookList[index])
+    }
+    
+    func bookAtIndex(_ index: Int) -> Book {
+        return bookList[index]
     }
     
     var isEmpty: Bool {

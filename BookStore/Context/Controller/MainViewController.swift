@@ -9,9 +9,10 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet private weak var colllectionView: UICollectionView!{
+    // MARK: - IBOutlets
+    @IBOutlet private weak var collectionView: UICollectionView!{
         didSet {
-            colllectionView.register(cellClass: BookCollectionViewCell.self)
+            collectionView.register(cellClass: BookCollectionViewCell.self)
         }
     }
     
@@ -25,10 +26,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         // I'm Here...
+        setupNavBar()
         bindUI()
         mainViewModel.getBooks()
-        navigationItem.rightBarButtonItem = addFavotitesBarButtonItem()
-        title = "Books"
     }
 
     // MARK: - Private Method
@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
     }
     
     private func updateUI() {
-        colllectionView.reloadData()
+        collectionView.reloadData()
     }
     
     private func handleAlertView(err: BackendError?) {
@@ -58,19 +58,27 @@ class MainViewController: UIViewController {
         }
     }
     
-    func addFavotitesBarButtonItem() -> UIBarButtonItem? {
-        return UIBarButtonItem(image: #imageLiteral(resourceName: "ic_faved"), style: .plain, target: self, action: #selector(favoritesBarButtonTapped(_:)))
+    private func addFavotitesBarButtonItem() -> UIBarButtonItem? {
+        return UIBarButtonItem(title: "Favorites", style: .plain, target: self, action: #selector(favoritesBarButtonTapped(_:)))
     }
     
+    private func setupNavBar() {
+        title = "Books"
+        navigationItem.rightBarButtonItem = addFavotitesBarButtonItem()
+        navigationController?.navigationBar.barTintColor = .darkGray
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.5254901961, blue: 0, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
     
-    @objc func favoritesBarButtonTapped(_ sender: UIButton) {
+    // MARK: - Action Method
+    @objc private func favoritesBarButtonTapped(_ sender: UIButton) {
         print(#function)
     }
     
 }
 
 //MARK:- UICollectionView DataSource&Delegate
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mainViewModel.numberOfRows
@@ -78,7 +86,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.reuseIdentifier, for: indexPath as IndexPath) as? BookCollectionViewCell)!
-        if let bookItemViewModel = mainViewModel.bookAtIndex(indexPath.row) {
+        if let bookItemViewModel = mainViewModel.bookItemViewModelAtIndex(indexPath.row) {
             cell.bookItemViewModel = bookItemViewModel
         }
         return cell
@@ -94,4 +102,23 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+         let padding: CGFloat =  40
+         let collectionViewSize = collectionView.frame.size.width - padding
+
+        return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.4)
+     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 10, bottom: 60, right: 10)
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 30
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
 }

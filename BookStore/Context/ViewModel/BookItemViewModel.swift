@@ -15,6 +15,10 @@ class BookItemViewModel: BaseVM {
     }
 
     var imageURL: String {
-        book.volumeInfo?.imageLinks?.thumbnail ?? ""
+        book.volumeInfo?.imageLinks?.smallThumbnail ?? ""
+    }
+    
+    var title: String {
+        book.volumeInfo?.title ?? ""
     }
 }
