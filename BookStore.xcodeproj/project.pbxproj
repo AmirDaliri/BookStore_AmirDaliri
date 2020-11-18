@@ -11,6 +11,8 @@
 		C5A40180256552D800729650 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4017E256552D800729650 /* MainViewController.swift */; };
 		C5A40181256552D800729650 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A4017F256552D800729650 /* MainViewController.xib */; };
 		C5A40184256552FF00729650 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40183256552FF00729650 /* UIViewController+Extension.swift */; };
+		C5A40194256556D600729650 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40193256556D600729650 /* NetworkLayer.swift */; };
+		C5A40197256556F100729650 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40196256556F100729650 /* AppConstants.swift */; };
 		C5BD881D256444010095E984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD881C256444010095E984 /* AppDelegate.swift */; };
 		C5BD881F256444010095E984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD881E256444010095E984 /* SceneDelegate.swift */; };
 		C5BD8827256444010095E984 /* BookStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5BD8825256444010095E984 /* BookStore.xcdatamodeld */; };
@@ -25,6 +27,8 @@
 		C5A4017E256552D800729650 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C5A4017F256552D800729650 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		C5A40183256552FF00729650 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		C5A40193256556D600729650 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		C5A40196256556F100729650 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		C5BD8819256444010095E984 /* BookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD881C256444010095E984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5BD881E256444010095E984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			children = (
 				C5BD881C256444010095E984 /* AppDelegate.swift */,
 				C5BD881E256444010095E984 /* SceneDelegate.swift */,
+				C5A40196256556F100729650 /* AppConstants.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				C5A401892565543300729650 /* Context */,
 				C5A4018B2565547C00729650 /* Resource */,
 				C5A4018C2565548B00729650 /* Misc */,
+				C5A40193256556D600729650 /* NetworkLayer.swift */,
 			);
 			path = BookStore;
 			sourceTree = "<group>";
@@ -251,9 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A40194256556D600729650 /* NetworkLayer.swift in Sources */,
 				C5BD881D256444010095E984 /* AppDelegate.swift in Sources */,
 				C5BD8827256444010095E984 /* BookStore.xcdatamodeld in Sources */,
 				C5BD881F256444010095E984 /* SceneDelegate.swift in Sources */,
+				C5A40197256556F100729650 /* AppConstants.swift in Sources */,
 				C5A40184256552FF00729650 /* UIViewController+Extension.swift in Sources */,
 				C5A40180256552D800729650 /* MainViewController.swift in Sources */,
 			);
