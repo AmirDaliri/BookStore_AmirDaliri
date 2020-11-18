@@ -1,8 +1,9 @@
-platform :ios, 11.0
+platform :ios, 12.0
 use_frameworks!
 
 def shared_pods
   pod 'Alamofire'
+  pod 'ObjectMapper'
 end
 
 target 'BookStore' do

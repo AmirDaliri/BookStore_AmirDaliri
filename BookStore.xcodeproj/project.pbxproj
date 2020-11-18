@@ -15,12 +15,26 @@
 		C5A40197256556F100729650 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40196256556F100729650 /* AppConstants.swift */; };
 		C5A4019C2565579600729650 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4019B2565579600729650 /* APIRouter.swift */; };
 		C5A401A02565598B00729650 /* MainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4019F2565598B00729650 /* MainRequest.swift */; };
-		C5A401A62565603C00729650 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401A52565603C00729650 /* Books.swift */; };
 		C5A401AC2565609900729650 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401AB2565609900729650 /* MainViewModel.swift */; };
 		C5A401B9256566C600729650 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401B8256566C600729650 /* Disposable.swift */; };
 		C5A401BC256566D600729650 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401BB256566D600729650 /* Observable.swift */; };
 		C5A401C32565671900729650 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401C22565671900729650 /* State.swift */; };
 		C5A401C62565677200729650 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401C52565677200729650 /* BaseVM.swift */; };
+		C5A401E725656B7600729650 /* ListPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401D825656B7500729650 /* ListPrice.swift */; };
+		C5A401E825656B7600729650 /* ImageLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401D925656B7500729650 /* ImageLinks.swift */; };
+		C5A401E925656B7600729650 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401DA25656B7500729650 /* Items.swift */; };
+		C5A401EA25656B7600729650 /* ReadingModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401DB25656B7500729650 /* ReadingModes.swift */; };
+		C5A401EB25656B7600729650 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401DC25656B7500729650 /* Books.swift */; };
+		C5A401EC25656B7600729650 /* AccessInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401DD25656B7600729650 /* AccessInfo.swift */; };
+		C5A401ED25656B7600729650 /* PanelizationSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401DE25656B7600729650 /* PanelizationSummary.swift */; };
+		C5A401EE25656B7600729650 /* RetailPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401DF25656B7600729650 /* RetailPrice.swift */; };
+		C5A401EF25656B7600729650 /* Offers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401E025656B7600729650 /* Offers.swift */; };
+		C5A401F025656B7600729650 /* Epub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401E125656B7600729650 /* Epub.swift */; };
+		C5A401F125656B7600729650 /* SaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401E225656B7600729650 /* SaleInfo.swift */; };
+		C5A401F225656B7600729650 /* Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401E325656B7600729650 /* Pdf.swift */; };
+		C5A401F325656B7600729650 /* IndustryIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401E425656B7600729650 /* IndustryIdentifiers.swift */; };
+		C5A401F425656B7600729650 /* SearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401E525656B7600729650 /* SearchInfo.swift */; };
+		C5A401F525656B7600729650 /* VolumeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A401E625656B7600729650 /* VolumeInfo.swift */; };
 		C5BD881D256444010095E984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD881C256444010095E984 /* AppDelegate.swift */; };
 		C5BD881F256444010095E984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD881E256444010095E984 /* SceneDelegate.swift */; };
 		C5BD8827256444010095E984 /* BookStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5BD8825256444010095E984 /* BookStore.xcdatamodeld */; };
@@ -39,12 +53,26 @@
 		C5A40196256556F100729650 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		C5A4019B2565579600729650 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		C5A4019F2565598B00729650 /* MainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRequest.swift; sourceTree = "<group>"; };
-		C5A401A52565603C00729650 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		C5A401AB2565609900729650 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		C5A401B8256566C600729650 /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C5A401BB256566D600729650 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C5A401C22565671900729650 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		C5A401C52565677200729650 /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
+		C5A401D825656B7500729650 /* ListPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPrice.swift; sourceTree = "<group>"; };
+		C5A401D925656B7500729650 /* ImageLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLinks.swift; sourceTree = "<group>"; };
+		C5A401DA25656B7500729650 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		C5A401DB25656B7500729650 /* ReadingModes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingModes.swift; sourceTree = "<group>"; };
+		C5A401DC25656B7500729650 /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		C5A401DD25656B7600729650 /* AccessInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessInfo.swift; sourceTree = "<group>"; };
+		C5A401DE25656B7600729650 /* PanelizationSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelizationSummary.swift; sourceTree = "<group>"; };
+		C5A401DF25656B7600729650 /* RetailPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetailPrice.swift; sourceTree = "<group>"; };
+		C5A401E025656B7600729650 /* Offers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offers.swift; sourceTree = "<group>"; };
+		C5A401E125656B7600729650 /* Epub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Epub.swift; sourceTree = "<group>"; };
+		C5A401E225656B7600729650 /* SaleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleInfo.swift; sourceTree = "<group>"; };
+		C5A401E325656B7600729650 /* Pdf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pdf.swift; sourceTree = "<group>"; };
+		C5A401E425656B7600729650 /* IndustryIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryIdentifiers.swift; sourceTree = "<group>"; };
+		C5A401E525656B7600729650 /* SearchInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInfo.swift; sourceTree = "<group>"; };
+		C5A401E625656B7600729650 /* VolumeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeInfo.swift; sourceTree = "<group>"; };
 		C5BD8819256444010095E984 /* BookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD881C256444010095E984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5BD881E256444010095E984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +188,21 @@
 		C5A401A92565607700729650 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C5A401A52565603C00729650 /* Books.swift */,
+				C5A401DC25656B7500729650 /* Books.swift */,
+				C5A401DD25656B7600729650 /* AccessInfo.swift */,
+				C5A401E125656B7600729650 /* Epub.swift */,
+				C5A401D925656B7500729650 /* ImageLinks.swift */,
+				C5A401E425656B7600729650 /* IndustryIdentifiers.swift */,
+				C5A401DA25656B7500729650 /* Items.swift */,
+				C5A401D825656B7500729650 /* ListPrice.swift */,
+				C5A401E025656B7600729650 /* Offers.swift */,
+				C5A401DE25656B7600729650 /* PanelizationSummary.swift */,
+				C5A401E325656B7600729650 /* Pdf.swift */,
+				C5A401DB25656B7500729650 /* ReadingModes.swift */,
+				C5A401DF25656B7600729650 /* RetailPrice.swift */,
+				C5A401E225656B7600729650 /* SaleInfo.swift */,
+				C5A401E525656B7600729650 /* SearchInfo.swift */,
+				C5A401E625656B7600729650 /* VolumeInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,9 +266,9 @@
 				C5A401872565541900729650 /* App */,
 				C5A401992565577D00729650 /* Networking */,
 				C5A401892565543300729650 /* Context */,
+				C5A401C0256566EB00729650 /* Core */,
 				C5A4018B2565547C00729650 /* Resource */,
 				C5A4018C2565548B00729650 /* Misc */,
-				C5A401C0256566EB00729650 /* Core */,
 			);
 			path = BookStore;
 			sourceTree = "<group>";
@@ -345,20 +387,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A401F125656B7600729650 /* SaleInfo.swift in Sources */,
 				C5A401BC256566D600729650 /* Observable.swift in Sources */,
 				C5A40194256556D600729650 /* NetworkLayer.swift in Sources */,
 				C5A401B9256566C600729650 /* Disposable.swift in Sources */,
+				C5A401F325656B7600729650 /* IndustryIdentifiers.swift in Sources */,
+				C5A401EC25656B7600729650 /* AccessInfo.swift in Sources */,
 				C5BD881D256444010095E984 /* AppDelegate.swift in Sources */,
+				C5A401EB25656B7600729650 /* Books.swift in Sources */,
+				C5A401F025656B7600729650 /* Epub.swift in Sources */,
+				C5A401E925656B7600729650 /* Items.swift in Sources */,
 				C5A401C62565677200729650 /* BaseVM.swift in Sources */,
 				C5BD8827256444010095E984 /* BookStore.xcdatamodeld in Sources */,
 				C5A401C32565671900729650 /* State.swift in Sources */,
+				C5A401F225656B7600729650 /* Pdf.swift in Sources */,
 				C5BD881F256444010095E984 /* SceneDelegate.swift in Sources */,
-				C5A401A62565603C00729650 /* Books.swift in Sources */,
+				C5A401EF25656B7600729650 /* Offers.swift in Sources */,
+				C5A401E725656B7600729650 /* ListPrice.swift in Sources */,
+				C5A401E825656B7600729650 /* ImageLinks.swift in Sources */,
 				C5A40197256556F100729650 /* AppConstants.swift in Sources */,
 				C5A401A02565598B00729650 /* MainRequest.swift in Sources */,
+				C5A401ED25656B7600729650 /* PanelizationSummary.swift in Sources */,
 				C5A4019C2565579600729650 /* APIRouter.swift in Sources */,
+				C5A401F525656B7600729650 /* VolumeInfo.swift in Sources */,
+				C5A401EE25656B7600729650 /* RetailPrice.swift in Sources */,
 				C5A40184256552FF00729650 /* UIViewController+Extension.swift in Sources */,
 				C5A40180256552D800729650 /* MainViewController.swift in Sources */,
+				C5A401EA25656B7600729650 /* ReadingModes.swift in Sources */,
+				C5A401F425656B7600729650 /* SearchInfo.swift in Sources */,
 				C5A401AC2565609900729650 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,7 +558,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NCU4JG2P77;
 				INFOPLIST_FILE = BookStore/Resource/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,7 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NCU4JG2P77;
 				INFOPLIST_FILE = BookStore/Resource/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

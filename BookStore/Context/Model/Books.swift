@@ -1,178 +1,66 @@
 //
 //  Books.swift
-//  BookStore
 //
-//  Created by amir on 18.11.2020.
+//  Created by amir on 18.11.2020
+//  Copyright (c) . All rights reserved.
 //
 
 import Foundation
+import ObjectMapper
 
-// MARK: - Books
-struct Books: Codable {
-    let kind: String?
-    let totalItems: Int?
-    let items: [Item]?
-}
-
-// MARK: - Item
-struct Item: Codable {
-    let kind: Kind?
-    let id, etag: String?
-    let selfLink: String?
-    let volumeInfo: VolumeInfo?
-    let saleInfo: SaleInfo?
-    let accessInfo: AccessInfo?
-    let searchInfo: SearchInfo?
-}
-
-// MARK: - AccessInfo
-struct AccessInfo: Codable {
-    let country: Country?
-    let viewability: Viewability?
-    let embeddable, publicDomain: Bool?
-    let textToSpeechPermission: TextToSpeechPermission?
-    let epub, pdf: Epub?
-    let webReaderLink: String?
-    let accessViewStatus: AccessViewStatus?
-    let quoteSharingAllowed: Bool?
-}
-
-enum AccessViewStatus: String, Codable {
-    case sample = "SAMPLE"
-}
-
-enum Country: String, Codable {
-    case tr = "TR"
-}
-
-// MARK: - Epub
-struct Epub: Codable {
-    let isAvailable: Bool?
-    let acsTokenLink: String?
-}
-
-enum TextToSpeechPermission: String, Codable {
-    case allowed = "ALLOWED"
-    case allowedForAccessibility = "ALLOWED_FOR_ACCESSIBILITY"
-}
-
-enum Viewability: String, Codable {
-    case partial = "PARTIAL"
-}
-
-enum Kind: String, Codable {
-    case booksVolume = "books#volume"
-}
-
-// MARK: - SaleInfo
-struct SaleInfo: Codable {
-    let country: Country?
-    let saleability: Saleability?
-    let isEbook: Bool?
-    let listPrice, retailPrice: SaleInfoListPrice?
-    let buyLink: String?
-    let offers: [Offer]?
-}
-
-// MARK: - SaleInfoListPrice
-struct SaleInfoListPrice: Codable {
-    let amount: Double?
-    let currencyCode: CurrencyCode?
-}
-
-enum CurrencyCode: String, Codable {
-    case currencyCodeTRY = "TRY"
-}
-
-// MARK: - Offer
-struct Offer: Codable {
-    let finskyOfferType: Int?
-    let listPrice, retailPrice: OfferListPrice?
-}
-
-// MARK: - OfferListPrice
-struct OfferListPrice: Codable {
-    let amountInMicros: Int?
-    let currencyCode: CurrencyCode?
-}
-
-enum Saleability: String, Codable {
-    case forSale = "FOR_SALE"
-    case notForSale = "NOT_FOR_SALE"
-}
-
-// MARK: - SearchInfo
-struct SearchInfo: Codable {
-    let textSnippet: String?
-}
-
-// MARK: - VolumeInfo
-struct VolumeInfo: Codable {
-    let title, subtitle: String?
-    let authors: [String]?
-    let publisher, publishedDate, volumeInfoDescription: String?
-    let industryIdentifiers: [IndustryIdentifier]?
-    let readingModes: ReadingModes?
-    let pageCount: Int?
-    let printType: PrintType?
-    let categories: [Category]?
-    let averageRating, ratingsCount: Int?
-    let maturityRating: MaturityRating?
-    let allowAnonLogging: Bool?
-    let contentVersion: String?
-    let panelizationSummary: PanelizationSummary?
-    let imageLinks: ImageLinks?
-    let language: Language?
-    let previewLink: String?
-    let infoLink: String?
-    let canonicalVolumeLink: String?
-
-    enum CodingKeys: String, CodingKey {
-        case title, subtitle, authors, publisher, publishedDate
-        case volumeInfoDescription = "description"
-        case industryIdentifiers, readingModes, pageCount, printType, categories, averageRating, ratingsCount, maturityRating, allowAnonLogging, contentVersion, panelizationSummary, imageLinks, language, previewLink, infoLink, canonicalVolumeLink
+class Books: Mappable, NSCoding {
+    
+    // MARK: Declaration for string constants to be used to decode and also serialize.
+    private struct SerializationKeys {
+        static let totalItems = "totalItems"
+        static let kind = "kind"
+        static let items = "items"
     }
-}
-
-enum Category: String, Codable {
-    case categoryCOMPUTERS = "COMPUTERS"
-    case computers = "Computers"
-}
-
-// MARK: - ImageLinks
-struct ImageLinks: Codable {
-    let smallThumbnail, thumbnail: String?
-}
-
-// MARK: - IndustryIdentifier
-struct IndustryIdentifier: Codable {
-    let type: TypeEnum?
-    let identifier: String?
-}
-
-enum TypeEnum: String, Codable {
-    case isbn10 = "ISBN_10"
-    case isbn13 = "ISBN_13"
-}
-
-enum Language: String, Codable {
-    case en = "en"
-}
-
-enum MaturityRating: String, Codable {
-    case notMature = "NOT_MATURE"
-}
-
-// MARK: - PanelizationSummary
-struct PanelizationSummary: Codable {
-    let containsEpubBubbles, containsImageBubbles: Bool?
-}
-
-enum PrintType: String, Codable {
-    case book = "BOOK"
-}
-
-// MARK: - ReadingModes
-struct ReadingModes: Codable {
-    let text, image: Bool?
+    
+    // MARK: Properties
+    var totalItems: Int?
+    var kind: String?
+    var items: [Items]?
+    
+    // MARK: ObjectMapper Initializers
+    /// Map a JSON object to this class using ObjectMapper.
+    ///
+    /// - parameter map: A mapping from ObjectMapper.
+    required init?(map: Map){}
+    
+    init() {}
+    
+    /// Map a JSON object to this class using ObjectMapper.
+    ///
+    /// - parameter map: A mapping from ObjectMapper.
+    func mapping(map: Map) {
+        totalItems <- map[SerializationKeys.totalItems]
+        kind <- map[SerializationKeys.kind]
+        items <- map[SerializationKeys.items]
+    }
+    
+    /// Generates description of the object in the form of a NSDictionary.
+    ///
+    /// - returns: A Key value pair containing all valid values in the object.
+    func dictionaryRepresentation() -> [String: Any] {
+        var dictionary: [String: Any] = [:]
+        if let value = totalItems { dictionary[SerializationKeys.totalItems] = value }
+        if let value = kind { dictionary[SerializationKeys.kind] = value }
+        if let value = items { dictionary[SerializationKeys.items] = value.map { $0.dictionaryRepresentation() } }
+        return dictionary
+    }
+    
+    // MARK: NSCoding Protocol
+    required init(coder aDecoder: NSCoder) {
+        self.totalItems = aDecoder.decodeObject(forKey: SerializationKeys.totalItems) as? Int
+        self.kind = aDecoder.decodeObject(forKey: SerializationKeys.kind) as? String
+        self.items = aDecoder.decodeObject(forKey: SerializationKeys.items) as? [Items]
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(totalItems, forKey: SerializationKeys.totalItems)
+        aCoder.encode(kind, forKey: SerializationKeys.kind)
+        aCoder.encode(items, forKey: SerializationKeys.items)
+    }
+    
 }

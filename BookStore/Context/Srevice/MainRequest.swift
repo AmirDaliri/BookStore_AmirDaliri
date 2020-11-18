@@ -5,24 +5,18 @@
 //  Created by amir on 18.11.2020.
 //
 
-import Foundation
 import Alamofire
+import ObjectMapper
 
 class MainRequest: NSObject {
     static let shared = MainRequest()
     
-    func getBooks(index: Int, _ completionHandler: @escaping (Error?, Books?) -> Void) {
+    func getBooks(index: Int, _ completionHandler: @escaping (BackendError?, Books?) -> Void) {
         DefaultAlamofireManager.sharedManager.request(APIRouter.getBooks(q: "ios", max: 20, index: index)).validate().responseJSON { (response) in
             switch response.result {
-            case .success(_):
-                if let data = response.data {
-                    let decoder = JSONDecoder()
-                    do {
-                        let books = try decoder.decode(Books.self, from: data)
-                        completionHandler(nil, books)
-                    } catch {
-                        completionHandler(BackendError.objectSerialization(reason: error), nil)
-                    }
+            case .success(let value):
+                if let books = Mapper<Books>().map(JSONObject: value) {
+                    completionHandler(nil, books)
                 }
             case .failure(let err):
                 switch response.response?.statusCode {
