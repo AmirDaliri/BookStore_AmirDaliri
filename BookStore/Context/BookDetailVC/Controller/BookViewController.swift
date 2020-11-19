@@ -43,6 +43,7 @@ class BookViewController: BaseVC {
         super.configureUI()
         
         guard let book = self.data as? Book else {return}
+        bookDetailModel = book
         bookViewModel = BookViewModel(model: book)
         bookImageView.setImage(urlStr: bookViewModel.imageLink)
         bookNameLabel.text = bookViewModel.name

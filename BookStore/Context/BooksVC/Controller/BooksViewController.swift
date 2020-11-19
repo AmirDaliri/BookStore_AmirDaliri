@@ -30,6 +30,11 @@ class BooksViewController: BaseVC {
         booksViewModel.getBooks()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
+    
     override func configureUI() {
         super.configureUI()
         pageTitle = "Books"

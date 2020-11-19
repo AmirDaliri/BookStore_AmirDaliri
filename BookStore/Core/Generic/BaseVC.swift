@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 enum NavigationBarButtonType: Int {
     case favorites = 1
+    case favorite = 2
+    case unFavorite = 3
 }
 
 class BaseVC: UIViewController {
@@ -47,10 +50,15 @@ class BaseVC: UIViewController {
         super.viewDidLayoutSubviews()
     }
     
+    var bookDetailModel: Book?
     
     func configureUI() {
         view.clipsToBounds = true
         configureNavigationBar()
+    }
+    
+    deinit {
+        self.data = nil
     }
     
     // MARK: - Configure NavigationBar
@@ -71,7 +79,28 @@ class BaseVC: UIViewController {
         if self.isKind(of: BooksViewController.self) {
             array.append(self.createBarButtonItem(.favorites))
         }
+        if self.isKind(of: BookViewController.self) {
+            if shouldCreateFaveBarButton() {
+                array.append(self.createBarButtonItem(.favorite))
+            } else {
+                array.append(self.createBarButtonItem(.unFavorite))
+            }
+        }
         return array
+    }
+
+    func shouldCreateFaveBarButton() -> Bool{
+        if let book = self.data as? Book  {
+            let controller = CoreDataManager.shared.getSbookNSFetchedResultsController()
+            if let items = controller.fetchedObjects {
+                for i in items {
+                    if book.id == i.id {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
     }
     
     @objc private func barButtonAction(_ button: UIButton) {
@@ -79,10 +108,24 @@ class BaseVC: UIViewController {
     }
     
     func navigationBarButtonAction(_ type: NavigationBarButtonType) {
-        /// switch case for handle more than one bar button
         switch type {
         case .favorites:
             Coordinator.shared.requestNavigation(.book)
+        case .favorite:
+            if let book = self.data as? Book  {
+                let controller = CoreDataManager.shared.getSbookNSFetchedResultsController()
+                if let items = controller.fetchedObjects,
+                   let book = items.first(where: {$0.id == book.id}) {
+                    context.delete(book)
+                    appDelegate.saveContext()
+                    resetNavBarItems()
+                }
+            }
+        case .unFavorite:
+            if let book = self.data as? Book  {
+                CoreDataManager.shared.addToFavorite(book: book)
+                resetNavBarItems()
+            }
         }
     }
     
@@ -92,13 +135,22 @@ class BaseVC: UIViewController {
         button.contentHorizontalAlignment = .center
         button.contentMode = .center
         button.tag = type.rawValue
-        if type == .favorites {
+        switch type {
+        case .favorites:
             button.setTitle("Favorites", for: .normal)
+        case .favorite:
+            button.setImage(#imageLiteral(resourceName: "ic_faved"), for: .normal)
+        case .unFavorite:
+            button.setImage(#imageLiteral(resourceName: "ic_fave"), for: .normal)
         }
-        
         let barButtonItem = UIBarButtonItem(customView: button)
         barButtonItem.tag = type.rawValue
         return barButtonItem
+    }
+    
+    func resetNavBarItems() {
+        self.navigationItem.rightBarButtonItems = nil
+        self.navigationItem.rightBarButtonItems = self.rightBarButtonItems()
     }
     
     //MARK: - this function configured for use in bindUI error case.
