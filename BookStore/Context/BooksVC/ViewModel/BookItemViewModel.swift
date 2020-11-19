@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class BookItemViewModel: BaseVM {
     private var book: Book
@@ -15,10 +16,31 @@ class BookItemViewModel: BaseVM {
     }
 
     var imageURL: String {
-        book.volumeInfo?.imageLinks?.smallThumbnail ?? ""
+        return book.volumeInfo?.imageLinks?.smallThumbnail ?? ""
     }
     
     var title: String {
-        book.volumeInfo?.title ?? ""
+        return book.volumeInfo?.title ?? ""
+    }
+    
+    var id: String {
+        return book.id ?? ""
+    }
+
+    // MARK: - CoreData Method
+    func addToFavorite() {
+        CoreDataManager.shared.addToFavorite(book: book)
+    }
+    
+    func isFavedBook() -> Bool {
+        let controller = CoreDataManager.shared.getSbookNSFetchedResultsController()
+        if let items = controller.fetchedObjects {
+            for i in items {
+                if book.id == i.id {
+                    return true
+                }
+            }
+        }
+        return false
     }
 }
