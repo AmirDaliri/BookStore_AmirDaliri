@@ -42,6 +42,8 @@
 		C5A4023025659B1800729650 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4022F25659B1800729650 /* UIImageView+Extension.swift */; };
 		C5A4023325659DCE00729650 /* BookItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4023225659DCE00729650 /* BookItemViewModel.swift */; };
 		C5A402412565D9CA00729650 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A402402565D9CA00729650 /* Spinner.swift */; };
+		C5A4024F2565DC2400729650 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4024D2565DC2400729650 /* BookViewController.swift */; };
+		C5A402502565DC2400729650 /* BookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A4024E2565DC2400729650 /* BookViewController.xib */; };
 		C5BD881D256444010095E984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD881C256444010095E984 /* AppDelegate.swift */; };
 		C5BD881F256444010095E984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD881E256444010095E984 /* SceneDelegate.swift */; };
 		C5BD8827256444010095E984 /* BookStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5BD8825256444010095E984 /* BookStore.xcdatamodeld */; };
@@ -87,6 +89,8 @@
 		C5A4022F25659B1800729650 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		C5A4023225659DCE00729650 /* BookItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItemViewModel.swift; sourceTree = "<group>"; };
 		C5A402402565D9CA00729650 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		C5A4024D2565DC2400729650 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		C5A4024E2565DC2400729650 /* BookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewController.xib; sourceTree = "<group>"; };
 		C5BD8819256444010095E984 /* BookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD881C256444010095E984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5BD881E256444010095E984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C56360EA2565DE6B000779E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5A4024D2565DC2400729650 /* BookViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C56360EC2565DE73000779E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5A4024E2565DC2400729650 /* BookViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C56360ED2565DE7D000779E9 /* BookDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				C56360EA2565DE6B000779E9 /* Controller */,
+				C56360EC2565DE73000779E9 /* View */,
+			);
+			path = BookDetailVC;
+			sourceTree = "<group>";
+		};
 		C5A401872565541900729650 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,11 +167,8 @@
 		C5A401892565543300729650 /* Context */ = {
 			isa = PBXGroup;
 			children = (
-				C5A401B4256565CC00729650 /* Srevice */,
-				C5A401A22565602900729650 /* Controller */,
-				C5A401A92565607700729650 /* Model */,
-				C5A401A42565602F00729650 /* View */,
-				C5A401AE256560A000729650 /* ViewModel */,
+				C5A402462565DBFF00729650 /* BooksVC */,
+				C56360ED2565DE7D000779E9 /* BookDetailVC */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -279,6 +305,18 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		C5A402462565DBFF00729650 /* BooksVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5A401B4256565CC00729650 /* Srevice */,
+				C5A401A22565602900729650 /* Controller */,
+				C5A401A92565607700729650 /* Model */,
+				C5A401A42565602F00729650 /* View */,
+				C5A401AE256560A000729650 /* ViewModel */,
+			);
+			path = BooksVC;
+			sourceTree = "<group>";
+		};
 		C5BD8810256444010095E984 = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +409,7 @@
 			files = (
 				C5BD882C256444030095E984 /* LaunchScreen.storyboard in Resources */,
 				C5A402202565969500729650 /* BookCollectionViewCell.xib in Resources */,
+				C5A402502565DC2400729650 /* BookViewController.xib in Resources */,
 				C5A40181256552D800729650 /* BooksViewController.xib in Resources */,
 				C5BD8829256444030095E984 /* Assets.xcassets in Resources */,
 			);
@@ -458,6 +497,7 @@
 				C5A40184256552FF00729650 /* UIViewController+Extension.swift in Sources */,
 				C5A40180256552D800729650 /* BooksViewController.swift in Sources */,
 				C5A401EA25656B7600729650 /* ReadingModes.swift in Sources */,
+				C5A4024F2565DC2400729650 /* BookViewController.swift in Sources */,
 				C5A401F425656B7600729650 /* SearchInfo.swift in Sources */,
 				C5A401AC2565609900729650 /* BooksViewModel.swift in Sources */,
 			);
