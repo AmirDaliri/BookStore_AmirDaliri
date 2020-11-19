@@ -49,9 +49,7 @@ class BaseVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-    
-    var bookDetailModel: Book?
-    
+        
     func configureUI() {
         view.clipsToBounds = true
         configureNavigationBar()
