@@ -16,6 +16,8 @@
 		C56361402566A838000779E9 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563613A2566A838000779E9 /* ControllerFactory.swift */; };
 		C56361492566A9DF000779E9 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56361482566A9DF000779E9 /* BaseVC.swift */; };
 		C563614D2566AB22000779E9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C563614C2566AB22000779E9 /* UIView+Extension.swift */; };
+		C588571E2566EF42007E12AB /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C588571D2566EF42007E12AB /* CurvedView.swift */; };
+		C588572625670034007E12AB /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C588572525670034007E12AB /* BookViewModel.swift */; };
 		C5A40180256552D800729650 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4017E256552D800729650 /* BooksViewController.swift */; };
 		C5A40181256552D800729650 /* BooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A4017F256552D800729650 /* BooksViewController.xib */; };
 		C5A40184256552FF00729650 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40183256552FF00729650 /* UIViewController+Extension.swift */; };
@@ -71,6 +73,8 @@
 		C563613A2566A838000779E9 /* ControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		C56361482566A9DF000779E9 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		C563614C2566AB22000779E9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C588571D2566EF42007E12AB /* CurvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
+		C588572525670034007E12AB /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		C5A4017E256552D800729650 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		C5A4017F256552D800729650 /* BooksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksViewController.xib; sourceTree = "<group>"; };
 		C5A40183256552FF00729650 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 			children = (
 				C56361482566A9DF000779E9 /* BaseVC.swift */,
 				C5A401C52565677200729650 /* BaseVM.swift */,
+				C588571D2566EF42007E12AB /* CurvedView.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -186,8 +191,17 @@
 			children = (
 				C56360EA2565DE6B000779E9 /* Controller */,
 				C56360EC2565DE73000779E9 /* View */,
+				C58857282567094D007E12AB /* View Model */,
 			);
 			path = BookDetailVC;
+			sourceTree = "<group>";
+		};
+		C58857282567094D007E12AB /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C588572525670034007E12AB /* BookViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		C5A401872565541900729650 /* App */ = {
@@ -507,7 +521,9 @@
 				C5A401F125656B7600729650 /* SaleInfo.swift in Sources */,
 				C5A401BC256566D600729650 /* Observable.swift in Sources */,
 				C5A40194256556D600729650 /* NetworkLayer.swift in Sources */,
+				C588571E2566EF42007E12AB /* CurvedView.swift in Sources */,
 				C56361492566A9DF000779E9 /* BaseVC.swift in Sources */,
+				C588572625670034007E12AB /* BookViewModel.swift in Sources */,
 				C5A401B9256566C600729650 /* Disposable.swift in Sources */,
 				C5A401F325656B7600729650 /* IndustryIdentifiers.swift in Sources */,
 				C563613D2566A838000779E9 /* UINavigationController+Extension.swift in Sources */,

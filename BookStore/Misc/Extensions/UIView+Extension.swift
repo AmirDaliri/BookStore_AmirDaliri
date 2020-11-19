@@ -131,4 +131,12 @@ extension UIView {
             gradientLayer?.removeFromSuperlayer()
         }
     }
+    
+    func setShadow(shadowRadiuss: CGFloat, shadowheight: CGFloat, shadowOpacity: Float, shadowColor: UIColor) {
+        layer.masksToBounds = false
+        layer.shadowColor = shadowColor.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: shadowheight)
+        layer.shadowRadius = shadowRadiuss
+        layer.shadowOpacity = shadowOpacity
+    }
 }

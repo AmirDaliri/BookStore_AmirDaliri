@@ -429,6 +429,15 @@ class NavigationManager {
         
         return nil
     }
+    
+    // MARK: - Open Safari
+    func navigateToSafari(url: String) {
+        DispatchQueue.main.async {
+            if let url  = URL(string: url), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
