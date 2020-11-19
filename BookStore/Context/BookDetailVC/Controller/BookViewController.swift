@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookViewController: UIViewController {
+class BookViewController: BaseVC {
 
     // MARK: - Lifecycle Methods
     
@@ -15,6 +15,9 @@ class BookViewController: UIViewController {
         super.viewDidLoad()
         
         // I'm Here...
+        if let data = self.data as? Book {
+            // TODO:  check the book item
+        }
     }
 
 }
