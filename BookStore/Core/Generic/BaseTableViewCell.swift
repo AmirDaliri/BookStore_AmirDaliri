@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class BaseTableViewCell: UITableViewCell, UITableViewCellLoading {
     
     override func awakeFromNib() {

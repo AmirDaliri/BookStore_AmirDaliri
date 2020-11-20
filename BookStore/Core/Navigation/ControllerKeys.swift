@@ -10,11 +10,14 @@ import UIKit
 typealias ControllerKey = String
 
 let kControllerMap: [ ControllerKey: (classType: UIViewController.Type, title: String)] =
-    [ControllerKeys.books.rawValue: (BooksViewController.self, ""),
-     ControllerKeys.book.rawValue: (BookViewController.self, "")
-]
+    [
+        ControllerKeys.books.rawValue: (BooksViewController.self, ""),
+        ControllerKeys.book.rawValue: (BookViewController.self, ""),
+        ControllerKeys.faves.rawValue: (FavoritesViewController.self, "")
+    ]
 
 enum ControllerKeys: ControllerKey {
     case books
     case book
+    case faves
 }
