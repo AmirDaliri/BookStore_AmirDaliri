@@ -55,6 +55,7 @@ class FavoritesViewController: BaseVC {
             TableViewHelper.shared.EmptyMessage(message: "There is no favourites found.", viewController: self, tableView: tableView)
             self.pageTitle = "Favourites"
         } else {
+            self.showFavoritesHelperMessage()
             self.pageTitle = "Favourites (\(favoritesViewModel.controller.fetchedObjects?.count ?? 0))"
         }        
         tableView.reloadData()

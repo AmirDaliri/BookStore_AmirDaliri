@@ -163,4 +163,15 @@ class BaseVC: UIViewController {
             .show(in: self)
         }
     }
+    
+    // MARK: - Favorites List Message Helper
+    func showFavoritesHelperMessage() {
+        if let receivedData = KeyChainManager.shared.load(key: "faveHelperMessageSeened"), receivedData.to(type: Bool.self) {
+            return
+        } else {
+            let data = Data(from: Data(from: true))
+            KeyChainManager.shared.save(key: "faveHelperMessageSeened", data: data)
+            handleAlertView(title: "Helper", message: "you can remove your favorite item with swipe the item to left.")
+        }
+    }
 }
