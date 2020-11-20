@@ -30,9 +30,9 @@ class BookViewController: BaseVC {
     
     // MARK: - Properties
     private var bookViewModel = BookViewModel()
-
-    // MARK: - Lifecycle Methods
+    private var sBookItemViewModel = SBookItemViewModel()
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,19 +41,36 @@ class BookViewController: BaseVC {
 
     override func configureUI() {
         super.configureUI()
-        
-        guard let book = self.data as? Book else {return}
-        bookViewModel = BookViewModel(model: book)
-        bookImageView.setImage(urlStr: bookViewModel.imageLink)
-        bookNameLabel.text = bookViewModel.name
-        bookAuthorsLabel.text = bookViewModel.authors
-        bookPublishedDateLabel.text = bookViewModel.publishedDate
-        bookDescriptionLabel.attributedText = bookViewModel.descriptionAttr
-        buyButton.isHidden = bookViewModel.isPurchasesEnable
+        if let book = self.data as? Book {
+            bookViewModel = BookViewModel(model: book)
+            bookImageView.setImage(urlStr: bookViewModel.imageLink)
+            bookNameLabel.text = bookViewModel.name
+            bookAuthorsLabel.text = bookViewModel.authors
+            bookPublishedDateLabel.text = bookViewModel.publishedDate
+            bookDescriptionLabel.attributedText = bookViewModel.descriptionAttr
+            buyButton.isHidden = bookViewModel.isPurchasesEnable
+        } else if let book = self.data as? SBook {
+            sBookItemViewModel = SBookItemViewModel(book: book)
+            bookNameLabel.text = sBookItemViewModel.title
+            bookAuthorsLabel.text = sBookItemViewModel.authors
+            bookPublishedDateLabel.text = sBookItemViewModel.publishedDate
+            bookDescriptionLabel.attributedText = sBookItemViewModel.descriptionAttr
+            buyButton.isHidden = sBookItemViewModel.isPurchasesEnable
+            self.navigationItem.rightBarButtonItems = nil
+            if let data = sBookItemViewModel.imageData {
+                DispatchQueue.main.async {
+                    self.bookImageView.image = UIImage(data: data)
+                }
+            }
+        }
     }
     
     // MARK: - IBAction
     @IBAction func buyButtonTapped(_ sender: Any) {
-        NavigationManager.shared.navigateToSafari(url: bookViewModel.buyLink)
+        guard (data as? SBook) != nil else {
+            NavigationManager.shared.navigateToSafari(url: bookViewModel.buyLink)
+            return
+        }
+        NavigationManager.shared.navigateToSafari(url: sBookItemViewModel.buyLink)
     }
 }
