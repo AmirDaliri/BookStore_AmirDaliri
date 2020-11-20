@@ -16,7 +16,13 @@ class MainRequest: NSObject {
             switch response.result {
             case .success(let value):
                 if let books = Mapper<Books>().map(JSONObject: value) {
-                    completionHandler(nil, books)
+                    if books.items != nil {
+                        completionHandler(nil, books)
+                    } else {
+                        completionHandler(BackendError.finishedList(reason: "There is no extra data"), nil)
+                    }
+                } else {
+                    completionHandler(BackendError.objectSerialization(reason: response.error), nil)
                 }
             case .failure(let err):
                 switch response.response?.statusCode {

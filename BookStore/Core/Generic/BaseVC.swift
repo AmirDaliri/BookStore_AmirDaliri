@@ -171,7 +171,7 @@ class BaseVC: UIViewController {
         } else {
             let data = Data(from: Data(from: true))
             KeyChainManager.shared.save(key: "faveHelperMessageSeened", data: data)
-            handleAlertView(title: "Helper", message: "you can remove your favorite item with swipe the item to left.")
+            handleAlertView(title: "Help", message: "You can remove your favorite item with swipe the item to left.")
         }
     }
 }

@@ -25,7 +25,6 @@ class BooksViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // I'm Here...
         bindUI()
         booksViewModel.getBooks()
     }
@@ -48,7 +47,7 @@ class BooksViewController: BaseVC {
             case .success:
                 self.updateUI()
             case .error(let err):
-                self.handleAlertView(title: nil, message: err?.localizedDescription ?? "")
+                self.handleAlertView(title: nil, message: err?.descriptionStr ?? "")
             default:
                 break
             }

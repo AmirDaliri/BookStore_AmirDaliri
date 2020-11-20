@@ -28,7 +28,6 @@ class FavoritesViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // I'm Here...
         bindUI()
         favoritesViewModel.fetchFavorites()
     }

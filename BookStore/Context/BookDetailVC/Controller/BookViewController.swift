@@ -33,11 +33,6 @@ class BookViewController: BaseVC {
     private var sBookItemViewModel = SBookItemViewModel()
     
     // MARK: - Lifecycle Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // I'm Here...
-    }
 
     override func configureUI() {
         super.configureUI()

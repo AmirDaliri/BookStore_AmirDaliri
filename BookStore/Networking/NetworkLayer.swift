@@ -24,7 +24,19 @@ public enum BackendError: Error {
     case badAPIRequest(error: Error) ///API errors
     case unauthorized(error: Error) ///Auth errors
     case unknown(error: Error) ///Unknown errors
-    case objectSerialization(reason: Error)
+    case objectSerialization(reason: Error?)
+    case finishedList(reason: String)
+}
+
+extension BackendError {
+    public var descriptionStr: String? {
+        switch self {
+        case .finishedList(let reason):
+            return reason
+        default:
+            return self.localizedDescription
+        }
+    }
 }
 
 protocol APIConfiguration: URLRequestConvertible {
