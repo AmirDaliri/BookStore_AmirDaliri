@@ -26,6 +26,8 @@
 		C56799FE256746650056D6A1 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56799FD256746650056D6A1 /* TableViewHelper.swift */; };
 		C588571E2566EF42007E12AB /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C588571D2566EF42007E12AB /* CurvedView.swift */; };
 		C588572625670034007E12AB /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C588572525670034007E12AB /* BookViewModel.swift */; };
+		C594C6B22567BFE8008B7CD7 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C594C6B12567BFE8008B7CD7 /* KeyChainManager.swift */; };
+		C594C6B52567C01B008B7CD7 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C594C6B42567C01B008B7CD7 /* Data+Extension.swift */; };
 		C5A40180256552D800729650 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4017E256552D800729650 /* BooksViewController.swift */; };
 		C5A40181256552D800729650 /* BooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A4017F256552D800729650 /* BooksViewController.xib */; };
 		C5A40184256552FF00729650 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A40183256552FF00729650 /* UIViewController+Extension.swift */; };
@@ -92,6 +94,8 @@
 		C56799FD256746650056D6A1 /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 		C588571D2566EF42007E12AB /* CurvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
 		C588572525670034007E12AB /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		C594C6B12567BFE8008B7CD7 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		C594C6B42567C01B008B7CD7 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		C5A4017E256552D800729650 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		C5A4017F256552D800729650 /* BooksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksViewController.xib; sourceTree = "<group>"; };
 		C5A40183256552FF00729650 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 				C56361372566A837000779E9 /* UINavigationController+Extension.swift */,
 				C56361352566A837000779E9 /* ViewController+Extension.swift */,
 				C563614C2566AB22000779E9 /* UIView+Extension.swift */,
+				C594C6B42567C01B008B7CD7 /* Data+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 			children = (
 				C5BD8825256444010095E984 /* BookStore.xcdatamodeld */,
 				C5BA2C88256727090016B4E3 /* CoreDataManager.swift */,
+				C594C6B12567BFE8008B7CD7 /* KeyChainManager.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				C5A401E725656B7600729650 /* ListPrice.swift in Sources */,
 				C56799FE256746650056D6A1 /* TableViewHelper.swift in Sources */,
 				C563614D2566AB22000779E9 /* UIView+Extension.swift in Sources */,
+				C594C6B22567BFE8008B7CD7 /* KeyChainManager.swift in Sources */,
 				C5A4023025659B1800729650 /* UIImageView+Extension.swift in Sources */,
 				C5A401E825656B7600729650 /* ImageLinks.swift in Sources */,
 				C5A4023325659DCE00729650 /* BookItemViewModel.swift in Sources */,
@@ -646,6 +653,7 @@
 				C5A401EA25656B7600729650 /* ReadingModes.swift in Sources */,
 				C5A4024F2565DC2400729650 /* BookViewController.swift in Sources */,
 				C5A401F425656B7600729650 /* SearchInfo.swift in Sources */,
+				C594C6B52567C01B008B7CD7 /* Data+Extension.swift in Sources */,
 				C5A401AC2565609900729650 /* BooksViewModel.swift in Sources */,
 				C563613E2566A838000779E9 /* ControllerKeys.swift in Sources */,
 			);

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TableViewHelper {
+class TableViewHelper: NSObject {
     static let shared = TableViewHelper()
     
     func EmptyMessage(message:String, viewController: UIViewController, tableView: UITableView) {
