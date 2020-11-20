@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Kingfisher
 
 class CoreDataManager: NSObject {
     static let shared = CoreDataManager()
@@ -47,6 +48,20 @@ class CoreDataManager: NSObject {
         bookTable.isPurchasesEnable = (book.saleInfo?.buyLink ?? "").isEmpty
         bookTable.buyLink = book.saleInfo?.buyLink ?? ""
         bookTable.id = book.id ?? ""
+
+        if let url = URL.init(string: book.volumeInfo?.imageLinks?.thumbnail ?? "") {
+            let resource = ImageResource(downloadURL: url)
+            KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
+                switch result {
+                case .success(let value):
+                    if let data = value.image.pngData() {
+                        bookTable.img = data
+                    }
+                case .failure(_):
+                    break
+                }
+            }
+        }
         appDelegate.saveContext()
     }
 }

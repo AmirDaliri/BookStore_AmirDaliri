@@ -5,12 +5,13 @@
         <attribute name="buyLink" optional="YES" attributeType="String"/>
         <attribute name="descriptionValue" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="Binary"/>
         <attribute name="imglink" optional="YES" attributeType="String"/>
         <attribute name="isPurchasesEnable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="publishedDate" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="SBook" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="SBook" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>
