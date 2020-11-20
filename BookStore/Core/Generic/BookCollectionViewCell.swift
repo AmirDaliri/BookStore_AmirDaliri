@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class BookCollectionViewCell: UICollectionViewCell, UICollectionViewCellLoading {
+class BookCollectionViewCell: BaseCollectionViewCell {
     
     @IBOutlet private weak var bookImageView: UIImageView! {
         didSet {

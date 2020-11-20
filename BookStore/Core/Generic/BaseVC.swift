@@ -108,7 +108,7 @@ class BaseVC: UIViewController {
     func navigationBarButtonAction(_ type: NavigationBarButtonType) {
         switch type {
         case .favorites:
-            Coordinator.shared.requestNavigation(.book)
+            Coordinator.shared.requestNavigation(.faves)
         case .favorite:
             if let book = self.data as? Book  {
                 let controller = CoreDataManager.shared.getSbookNSFetchedResultsController()
